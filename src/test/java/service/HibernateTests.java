@@ -17,8 +17,8 @@ import java.util.Set;
 /**
  * Created by glady on 30.06.2017.
  */
-public class AllTests {
-    private static final Logger LOG = LoggerFactory.getLogger(AllTests.class);
+public class HibernateTests {
+    private static final Logger LOG = LoggerFactory.getLogger(HibernateTests.class);
 
 
     @Test

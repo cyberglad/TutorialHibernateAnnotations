@@ -3,19 +3,37 @@ package entity;
 /**
  * Created by glady on 30.06.2017.
  */
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
+@Entity
+@Table(name = "EMPLOYEE")
 public class Employee {
 
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(name = "FIRST_NAME")
     private String firstName;
+    @Column(name = "LAST_NAME")
     private String lastName;
+    @Column(name = "BIRTHDAY")
     private Date birthday;
 
     //hibernate stuff
     //private Long addressId;
+    @OneToOne(cascade = CascadeType.MERGE)
     private Address address;
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "EMPL_PROJ",
+            joinColumns = @JoinColumn(name = "EMPLOYEE_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PROJECT_ID")
+    )
     private Set<Project> projects;
 
     public Employee() {

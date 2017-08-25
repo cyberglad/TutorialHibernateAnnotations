@@ -1,19 +1,34 @@
 package entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * Created by glady on 30.06.2017.
  */
-public class Address {
+@Entity
+@Table(name = "ADDRESS")
+public class Address{
 
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String country;
+    @Column(name = "CITY")
     private String city;
-    private String street;
+    @Column(name = "COUNTRY")
+    private String country;
+    @Column(name = "POST_CODE", length = 10)
     private String postCode;
+    @Column(name = "STREET")
+    private String street;
+
 
     public Address() {
 
     }
+
 
     public Long getId() {
         return id;

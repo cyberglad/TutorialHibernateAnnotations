@@ -1,14 +1,24 @@
 package entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
  * Created by glady on 30.06.2017.
  */
-public class Project {
+@Entity
+@Table(name = "PROJECT")
+public class Project{
 
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(name = "TITLE")
     private String title;
+    @ManyToMany(mappedBy = "projects")
     private Set<Employee> employees;
 
     public Project() {

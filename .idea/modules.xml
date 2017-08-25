@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JdbcTutorial.iml" filepath="$PROJECT_DIR$/JdbcTutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tutorial-hibernate.iml" filepath="$PROJECT_DIR$/tutorial-hibernate.iml" />
     </modules>
   </component>
 </project>
